@@ -12,4 +12,9 @@ fs.writeFile("./docs/blog1.txt", "hello Alain", () => {
   console.log("file was changed");
 });
 
-Promise.all;
+fs.mkdir("./Asset", (err) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log("file created");
+});
