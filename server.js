@@ -5,11 +5,16 @@ const server = http.createServer((req, res) => {
   console.log(req.url, req.method);
 
   //setting header
-  res.setHeader("contentType", "text/plain");
-
-  fs.readFile("./index.html", (error, data) => {
-    if (error) {
-      console.log("Opps Something Happens");
+  res.setHeader("contentType", "text/html");
+  // res.write("Hello Alain");
+  // res.end();
+  fs.readFile("./index.html", (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end();
+    } else {
+      // res.write(data);
+      res.end(data);
     }
   });
 });
