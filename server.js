@@ -49,3 +49,6 @@ const server = http.createServer((req, res) => {
 server.listen(4, "localhost", () => {
   console.log("port running on  4");
 });
+
+// express is a frameworkd that help use to manage request
+// routing request server side
