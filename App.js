@@ -57,5 +57,5 @@ app.get("/about", (req, res) => {
 // This catches any requests that don't match the routes above
 app.use((req, res) => {
   // Send 404 error page
-  res.statusCode(404).render("404");
+  res.status(404).render("404");
 });
