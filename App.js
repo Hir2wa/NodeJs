@@ -1,28 +1,61 @@
-const { render } = require("ejs");
-const express = require("express");
-// creating instance of express
+// ========================================
+// EXPRESS SERVER WITH EJS TEMPLATE ENGINE
+// ========================================
+
+// Import required modules
+const { render } = require("ejs"); // EJS template engine for dynamic HTML
+const express = require("express"); // Express.js web framework
+
+// Create Express application instance
 const app = express();
-// listening for request
-app.listen(3000);
-//register view ingine
+
+// ========================================
+// SERVER CONFIGURATION
+// ========================================
+
+// Set EJS as the template engine
+// This allows us to use .ejs files in the views folder
 app.set("view engine", "ejs");
+
+// Start the server and listen on port 3000
+// Server will be accessible at: http://localhost:3000
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
+});
+
+// ========================================
+// ROUTE HANDLERS
+// ========================================
+
+// Home page route - serves the main page
 app.get("/", (req, res) => {
-  //   res.send("hello world");
-  //hllo world
+  // Render the 'index' template from views folder
+  // Express automatically looks for views/index.ejs
   res.render("index");
 });
 
+// Redirect route - redirects /about-us to /about
 app.get("/about-us", (req, res) => {
   console.log("About-us route hit, redirecting to /about"); // Debug log
-  res.redirect("/about");
+  // HTTP 302 redirect to /about route
+  res.render("about");
 });
 
+// About page route - serves the about page
 app.get("/about", (req, res) => {
   console.log("About route hit!"); // Debug log
-  res.sendFile("./views/about.html", { root: __dirname });
+  // Render the 'about' EJS template from views folder
+  // Express automatically looks for views/about.ejs
+  res.render("about");
 });
 
-// 404 error page not found - this should be LAST
+// ========================================
+// ERROR HANDLING
+// ========================================
+
+// 404 Error Handler - MUST be the last route
+// This catches any requests that don't match the routes above
 app.use((req, res) => {
-  res.sendFile("./views/404.html", { root: __dirname });
+  // Send 404 error page
+  res.statusCode(404).render("404");
 });
