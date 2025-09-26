@@ -2,8 +2,24 @@ const express = require("express");
 // creating instance of express
 const app = express();
 // listening for request
-app.listen(300);
+app.listen(3000);
 app.get("/", (req, res) => {
   //   res.send("hello world");
+  //hllo world
+  res.sendFile("./views/Index.html", { root: __dirname });
+});
+
+app.get("/about-us", (req, res) => {
+  console.log("About-us route hit, redirecting to /about"); // Debug log
+  res.redirect("/about");
+});
+
+app.get("/about", (req, res) => {
+  console.log("About route hit!"); // Debug log
   res.sendFile("./views/about.html", { root: __dirname });
+});
+
+// 404 error page not found - this should be LAST
+app.use((req, res) => {
+  res.sendFile("./views/404.html", { root: __dirname });
 });
