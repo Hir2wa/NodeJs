@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   console.log(num);
 
   //setting header
-  res.setHeader("contentType", "text/html");
+  res.setHeader("Content-Type", "text/html");
   // res.write("Hello Alain");
   // res.end();
 
@@ -46,8 +46,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(4, "localhost", () => {
-  console.log("port running on  4");
+server.listen(3001, "localhost", () => {
+  console.log("port running on 3001");
 });
 
 // express is a frameworkd that help use to manage request
