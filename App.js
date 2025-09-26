@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 // listening for request
 app.listen(3000);
+//register view ingine
+app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   //   res.send("hello world");
   //hllo world
