@@ -1,3 +1,4 @@
+const { render } = require("ejs");
 const express = require("express");
 // creating instance of express
 const app = express();
@@ -8,7 +9,7 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   //   res.send("hello world");
   //hllo world
-  res.sendFile("./views/Index.html", { root: __dirname });
+  res.render("index");
 });
 
 app.get("/about-us", (req, res) => {
