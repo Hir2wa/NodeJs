@@ -28,7 +28,7 @@ app.listen(3000, () => {
 // ========================================
 
 // Home page route - serves the main page
-app.get("/", (req, res) => {
+app.get("^/$|Index(.html)?", (req, res) => {
   // Render the 'index' template from views folder
   // Express automatically looks for views/index.ejs
   res.render("index");
@@ -49,6 +49,12 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 
+app.get("^/$|old-page(.html)?", (req, res) => {
+  console.log("About route hit!"); // Debug log
+  // Render the 'about' EJS template from views folder
+  // Express automatically looks for views/about.ejs
+  res.redirect(301, "./new-page.html");
+});
 // ========================================
 // ERROR HANDLING
 // ========================================
