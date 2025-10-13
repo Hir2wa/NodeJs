@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3500;
+const middleware = require("./middleware/logEvents");
 //getting data in the form
 app.use(express.urlencoded({ extended: false }));
 //getting data in json file
