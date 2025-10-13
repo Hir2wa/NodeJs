@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3500;
-
+//getting data in the form
 app.use(express.urlencoded({ extended: false }));
+//getting data in json file
 app.use(express.json());
 app.get("^/$|/index(.html)?", (req, res) => {
   //res.sendFile('./views/index.html', { root: __dirname });
