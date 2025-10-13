@@ -12,7 +12,7 @@ app.use(express.json());
 //here all the file will be loaded in  before everything start
 app.use(express.static(path.join(__dirname, "/public")));
 //custom middleware
-app.use(logger());
+app.use(logger);
 app.get("^/$|/index(.html)?", (req, res) => {
   //res.sendFile('./views/index.html', { root: __dirname });
   res.sendFile(path.join(__dirname, "views", "index.html"));
