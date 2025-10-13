@@ -1,3 +1,4 @@
+const { log } = require("console");
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -9,6 +10,11 @@ app.use(express.json());
 //getting static pages
 //here all the file will be loaded in  before everything start
 app.use(express.static(path.join(__dirname, "/public")));
+
+app.use((req, res, next) => {
+  console.log(`${req.method}  and  ${req.path}`);
+  next();
+});
 app.get("^/$|/index(.html)?", (req, res) => {
   //res.sendFile('./views/index.html', { root: __dirname });
   res.sendFile(path.join(__dirname, "views", "index.html"));
