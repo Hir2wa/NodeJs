@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3500;
-const logEvent = require("./middleware/logEvents");
+const { logger } = require("./middleware/logEvents");
 //getting data in the form
 app.use(express.urlencoded({ extended: false }));
 //getting data in json file
@@ -12,11 +12,7 @@ app.use(express.json());
 //here all the file will be loaded in  before everything start
 app.use(express.static(path.join(__dirname, "/public")));
 //custom middleware
-app.use((req, res, next) => {
-  logEvent(`${req.method}\t ${req.url}\t ${req.headers.origin} `, "reqLog.txt");
-  console.log(`${req.method}  and  ${req.path}`);
-  next();
-});
+app.use(logger());
 app.get("^/$|/index(.html)?", (req, res) => {
   //res.sendFile('./views/index.html', { root: __dirname });
   res.sendFile(path.join(__dirname, "views", "index.html"));
