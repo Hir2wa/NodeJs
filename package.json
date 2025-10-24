@@ -1,29 +1,21 @@
 {
-  "name": "nodejs",
+  "name": "07tut",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/Hir2wa/NodeJs#readme",
-  "bugs": {
-    "url": "https://github.com/Hir2wa/NodeJs/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Hir2wa/NodeJs.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "File.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "Express tutorial",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server",
+    "dev": "nodemon server"
   },
+  "author": "Dave Gray",
+  "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "lodash": "^4.17.21"
+    "cors": "^2.8.5",
+    "date-fns": "^2.23.0",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
