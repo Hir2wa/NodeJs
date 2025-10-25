@@ -10,6 +10,22 @@ router
   .get((req, res) => {
     res.json(data.employees);
   })
-  .post((req, res) => {});
+  .post((req, res) => {
+    res.json({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+    });
+  })
+
+  .put((req, res) => {
+    res.json({
+      firstname: req.body.lastname,
+      lastname: req.body.lastname,
+    });
+  })
+
+  .delete((req, res) => {
+    res.json({ id: req.body.id });
+  });
 
 module.exports = router;
