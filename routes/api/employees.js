@@ -7,6 +7,9 @@ data.employees = require("../../data/employees.json");
 router
   .route("/")
 
-  .get();
+  .get((req, res) => {
+    res.json(data.employees);
+  })
+  .post((req, res) => {});
 
 module.exports = router;
