@@ -14,7 +14,7 @@ const addEmployee = (req, res) => {
 
 const udpateEmployee = (req, res) => {
   res.json({
-    firstname: req.body.lastname,
+    firstname: req.body.firstname,
     lastname: req.body.lastname,
   });
 };
