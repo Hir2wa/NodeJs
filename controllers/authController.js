@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const { useReducer } = require("react");
+
 const userDB = {
   user: require("../modal/user.json"),
   setUser: function (data) {
@@ -17,6 +17,7 @@ const handleLogin = (req, res) => {
   //finding a match
   const match = bcrypt.compare(pdw, foundUser.password);
   if (match) {
+    //these where we implement jwt
     res.json({ message: ` Welcome ${username}   You are Logged In!!` });
   } else {
     res.json({ message: `username or password don't math` });
