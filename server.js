@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3500;
 app.use(logger);
 
 // Cross Origin Resource Sharing
-
+const corsOptions = require("./config/corsOptions");
 // built-in middleware to handle urlencoded data
 // in other words, form data:
 // ‘content-type: application/x-www-form-urlencoded’
