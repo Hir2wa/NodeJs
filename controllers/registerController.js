@@ -15,4 +15,10 @@ const handleNewUser = async (req, res) => {
     return res.status(400).json({ message: "Invalid UserInfo" });
   const duplicate = userDB.user.find((person) => person.userName === user);
   if (duplicate) return res.status(409).json({ message: "duplicate" }); //checking for duplicates
+
+  try {
+    const hashedPassword = await bcrypt.hash(psd, 10);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
