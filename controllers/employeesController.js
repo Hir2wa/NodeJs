@@ -29,18 +29,18 @@ const addEmployee = (req, res) => {
 };
 
 const udpateEmployee = (req, res) => {
-  const employee = data.employees.find((emp) => {
-    emp.id === parseInt(req.body.id);
-  });
+  const employee = data.employees.find(
+    (emp) => emp.id === parseInt(req.body.id)
+  );
 
   if (!employee) {
     return res.status(400).json({ message: "Employee Not found" });
   }
 
-  res.json({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-  });
+  if (req.body.firstname) employee.firstname = req.body.firstname;
+  if (req.body.lastname) employee.lastname = req.body.lastname;
+
+  res.json({ message: "User Updated Successfully" });
 };
 
 const deleteEmployee = (req, res) => {
