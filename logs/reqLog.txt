@@ -63,3 +63,9 @@
 20251026	21:44:16	61fb7f38-16f0-456f-a22c-4e572efc91e0	DELETE	undefined	/employees/1
 20251026	21:44:26	0fd787aa-a253-455f-b74f-35fda260e9af	DELETE	undefined	/employees/2
 20251026	21:44:30	e70f86f3-5a00-4af0-924b-084cf3f2e6da	DELETE	undefined	/employees/5
+20251026	23:54:49	b8f19414-0f1e-48aa-823c-5fa1a636edbe	GET	undefined	/register
+20251026	23:54:55	69420e3d-0b64-470b-97cd-1650d26ad99f	POST	undefined	/register
+20251026	23:58:09	132242d2-507a-4d61-9447-d8b3ac8860dc	POST	undefined	/register
+20251027	00:00:48	f580a1cb-dcd0-4b3a-8342-3890bb6f7f86	POST	undefined	/register
+20251027	00:02:03	15bfd170-70b2-4b86-83fa-01f33042ed79	POST	undefined	/register
+20251027	00:06:38	65a52305-c5db-42b0-840e-2c4f4f761383	POST	undefined	/register
