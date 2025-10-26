@@ -2,3 +2,7 @@
 20251025	11:14:15	f8825488-488d-4762-9a82-dcf6282c87c0	Error: ENOENT: no such file or directory, stat 'C:\Users\Aime\Desktop\NodeJs\subdir\views\index.html'
 20251025	11:14:16	00730138-a80a-4ce8-8dcc-cc45c4199572	Error: ENOENT: no such file or directory, stat 'C:\Users\Aime\Desktop\NodeJs\subdir\views\index.html'
 20251025	11:23:44	8ec0ffb7-ba82-471c-8d55-03028c0f36bd	Error: ENOENT: no such file or directory, stat 'C:\Users\Aime\Desktop\NodeJs\subdir\views\index.html'
+20251026	21:41:42	fc61eed1-0f4a-47b4-b9f0-51f8862c34d4	SyntaxError: Unexpected non-whitespace character after JSON at position 20 (line 1 column 21)
+20251026	21:42:39	05009f04-cebc-4746-9dce-0804d6d2b767	SyntaxError: Unexpected non-whitespace character after JSON at position 20 (line 1 column 21)
+20251026	21:42:40	085dfb54-d378-4c93-b339-0f7c85a9c405	SyntaxError: Unexpected non-whitespace character after JSON at position 20 (line 1 column 21)
+20251026	21:43:11	b83852d3-8009-46d1-8dca-0d86e4881058	SyntaxError: Unexpected non-whitespace character after JSON at position 20 (line 1 column 21)

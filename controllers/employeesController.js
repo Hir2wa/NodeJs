@@ -57,9 +57,18 @@ const deleteEmployee = (req, res) => {
 };
 
 const getEmployee = (req, res) => {
+  console.log("Looking for employee with ID:", req.params.id);
+  console.log(
+    "Available employees:",
+    data.employees.map((emp) => emp.id)
+  );
+
   const employee = data.employees.find(
     (emp) => emp.id === parseInt(req.params.id)
   );
+
+  console.log("Found employee:", employee);
+
   if (!employee) return res.status(404).json({ message: "No Employee Found" });
 
   res.json(employee);
