@@ -29,6 +29,14 @@ const addEmployee = (req, res) => {
 };
 
 const udpateEmployee = (req, res) => {
+  const employee = data.employees.find((emp) => {
+    emp.id === parseInt(req.body.id);
+  });
+
+  if (!employee) {
+    return res.status(400).json({ message: "Employee Not found" });
+  }
+
   res.json({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
