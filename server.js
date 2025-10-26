@@ -11,6 +11,7 @@ app.use(logger);
 
 // Cross Origin Resource Sharing
 const corsOptions = require("./config/corsOptions");
+app.use(cors(corsOptions));
 // built-in middleware to handle urlencoded data
 // in other words, form data:
 // ‘content-type: application/x-www-form-urlencoded’
