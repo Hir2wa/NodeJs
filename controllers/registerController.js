@@ -7,11 +7,12 @@ const userDB = {
 const fsPromises = require("fs").promises;
 const path = require("path");
 const bcrypt = require("bcrypt");
+const { use } = require("react");
 
 const handleNewUser = async (req, res) => {
   const { user, psd } = req.body;
   if (!user || !psd)
     return res.status(400).json({ message: "Invalid UserInfo" });
-
-  //checking for duplicates
+  const duplicate = userDB.user.find((person) => person.userName === user);
+  if (duplicate) return res.status(409).json({ message: "duplicate" }); //checking for duplicates
 };
