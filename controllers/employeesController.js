@@ -55,7 +55,7 @@ const deleteEmployee = (req, res) => {
 
   data.setEmployees([...filtedEmployees]);
 
-  res.json({ id: req.body.id });
+  res.json(data.employees);
 };
 
 const getEmployee = (req, res) => {
