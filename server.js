@@ -30,6 +30,8 @@ app.use("/subdir", require("./routes/subdir"));
 app.use("/", require("./routes/roote"));
 app.use("/employees", require("./routes/api/employees"));
 app.use("/register", require("./routes/register"));
+app.use("/login", require("./routes/auth"));
+
 // Route handlers
 app.get(
   "/hello(.html)?",
