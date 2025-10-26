@@ -44,6 +44,17 @@ const udpateEmployee = (req, res) => {
 };
 
 const deleteEmployee = (req, res) => {
+  const employee = data.employees.find(
+    (emp) => emp.id === parseInt(req.body.id)
+  );
+
+  if (!employee) res.status(400).json({ message: "No Employee Found" });
+  const filtedEmployees = data.employees.filter(
+    (emp) => emp.id === parseInt(req.body.id)
+  );
+
+  data.setEmployees([...filtedEmployees]);
+
   res.json({ id: req.body.id });
 };
 
