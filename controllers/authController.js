@@ -1,7 +1,10 @@
 const express = require("express");
-const router = express.Router();
-const bcrypt = require("bcrypt");
 
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const fsPromise = require("fs");
+const path = require("path");
 const userDB = {
   user: require("../modal/user.json"),
   setUser: function (data) {
