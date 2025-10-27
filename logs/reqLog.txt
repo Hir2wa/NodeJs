@@ -69,3 +69,6 @@
 20251027	00:00:48	f580a1cb-dcd0-4b3a-8342-3890bb6f7f86	POST	undefined	/register
 20251027	00:02:03	15bfd170-70b2-4b86-83fa-01f33042ed79	POST	undefined	/register
 20251027	00:06:38	65a52305-c5db-42b0-840e-2c4f4f761383	POST	undefined	/register
+20251027	00:59:38	6388761d-6e76-4ee6-a02f-9781ffd3635d	POST	undefined	/login
+20251027	00:59:44	9df1b19c-d765-44b4-b4ee-5fccb1105320	POST	undefined	/login
+20251027	00:59:49	56316d9e-f581-44be-a90a-77ca18a8b5c1	POST	undefined	/login
