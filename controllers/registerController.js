@@ -18,7 +18,7 @@ const handleNewUser = async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(psd, 10);
-    const newUser = { username: user, password: hashedPassword };
+    const newUser = { username: user, password: hashedPassword, roles: 2001 };
     console.log("New user to add:", newUser);
     console.log("All User : ", userDB.user);
 
