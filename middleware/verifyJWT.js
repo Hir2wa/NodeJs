@@ -3,8 +3,9 @@ require("dotenv").config();
 
 const verifyJWT = (req, res, next) => {
   //checking for authorization in the header
-  const authHeader = req.headers["authorization"];
-  if (!authHeader) {
+  const authHeader = req.headers.authorization || req.headers.Authorization;
+
+  if (!authHeader?.startsWith("Bearer ")) {
     return res.status(401).json({ message: "Access token required" });
   }
 
@@ -20,8 +21,14 @@ const verifyJWT = (req, res, next) => {
       console.log("Invalid token:", err.message);
       return res.status(401).json({ message: "Invalid access token" });
     }
-    console.log("Token valid for user:", decoded.username);
-    req.user = decoded.username;
+
+    if (!decoded.UserInfo) {
+      return res.status(401).json({ message: "Invalid token structure" });
+    }
+
+    console.log("Token valid for user:", decoded.UserInfo.username);
+    req.user = decoded.UserInfo.username;
+    req.roles = decoded.UserInfo.roles;
     next();
   });
 };
