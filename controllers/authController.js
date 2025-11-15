@@ -3,9 +3,8 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const fsPromise = require("fs");
+const fsPromise = require("fs").promises;
 const path = require("path");
-const { use } = require("react");
 const userDB = {
   user: require("../modal/user.json"),
   setUser: function (data) {
@@ -24,10 +23,15 @@ const handleLogin = async (req, res) => {
     //finding a match
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
+      // Roles are already an array of strings in user.json
+      const roles = foundUser.roles;
       //these where we implement jwt
       const accessToken = jwt.sign(
         {
-          username: foundUser.username,
+          UserInfo: {
+            username: foundUser.username,
+            roles: roles,
+          },
         },
         process.env.ACCESS_TOKEN_SECRET,
         { expiresIn: "30s" }
@@ -46,7 +50,7 @@ const handleLogin = async (req, res) => {
       const currentUser = { ...foundUser, refreshToken };
       userDB.setUser([...otherUsers, currentUser]);
 
-      await fsPromise.writeFileSync(
+      await fsPromise.writeFile(
         path.join(__dirname, "..", "modal", "user.json"),
         JSON.stringify(userDB.user)
       );
