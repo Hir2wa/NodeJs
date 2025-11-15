@@ -1,6 +1,3 @@
-// const data = {};
-// data.employees = require("../modal/employees.json");
-
 const data = {
   employees: require("../modal/employees.json"),
   setEmployees: function (data) {
@@ -15,6 +12,7 @@ const getAllEmployees = (req, res) => {
 const addEmployee = (req, res) => {
   const addNewEmployee = {
     id: data.employees.length + 1,
+    roles: 2001,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
   };
